@@ -8,7 +8,7 @@ class RickAndMortyApplication : Application() {
 
     private var _appComponent: AppComponent? = null
 
-    private val appComponent: AppComponent
+    val appComponent: AppComponent
         get() = checkNotNull(_appComponent) {
             resources.getString(R.string.app_component_info)
         }
@@ -18,5 +18,6 @@ class RickAndMortyApplication : Application() {
         _appComponent = DaggerAppComponent.builder()
             .application(application = this)
             .build()
+
     }
 }

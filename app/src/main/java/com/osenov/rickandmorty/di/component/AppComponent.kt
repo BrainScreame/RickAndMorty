@@ -2,6 +2,7 @@ package com.osenov.rickandmorty.di.component
 
 import com.osenov.rickandmorty.RickAndMortyApplication
 import com.osenov.rickandmorty.di.module.AppModule
+import com.osenov.rickandmorty.util.ViewModelFactory
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -10,6 +11,7 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
 
+    fun viewModelsFactory(): ViewModelFactory
 
     @Component.Builder
     interface Builder {

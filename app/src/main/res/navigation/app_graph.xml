@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/charactersListFragment">
+
+    <fragment
+        android:id="@+id/charactersListFragment"
+        android:name="com.osenov.rickandmorty.ui.list_characters.CharactersListFragment"
+        android:label="fragment_characters_list"
+        tools:layout="@layout/fragment_characters_list" >
+        <action
+            android:id="@+id/action_charactersListFragment_to_characterDetailInformationFragment"
+            app:destination="@id/characterDetailInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailInformationFragment"
+        android:name="com.osenov.rickandmorty.ui.character_information.CharacterDetailInformationFragment"
+        android:label="fragment_character_detail_information"
+        tools:layout="@layout/fragment_character_detail_information" >
+        <action
+            android:id="@+id/action_characterDetailInformationFragment_to_episodesListFragment"
+            app:destination="@id/episodesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodesListFragment"
+        android:name="com.osenov.rickandmorty.ui.list_episodes.EpisodesListFragment"
+        android:label="fragment_episodes_list"
+        tools:layout="@layout/fragment_episodes_list" />
+</navigation>
