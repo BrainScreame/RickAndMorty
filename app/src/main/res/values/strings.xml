@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RickAndMorty</string>
+    <string name="app_component_info">AppComponent isn\'t initialized</string>
 </resources>
