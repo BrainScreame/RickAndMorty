@@ -1,11 +1,12 @@
-package com.osenov.rickandmorty
+package com.osenov.rickandmorty.ui.list_characters
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.osenov.rickandmorty.R
 
-class MainActivity : AppCompatActivity() {
+class CharactersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.characters_main)
     }
 }
