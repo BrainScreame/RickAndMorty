@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeColor="@color/characterStrokeColor"
+    app:cardCornerRadius="@dimen/corner_radius_character_item">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageCharacter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textCharacterStatus"
+            style="@style/textCharacterStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_horizontal_status_character"
+            android:layout_marginTop="@dimen/margin_top_status_character"
+            tools:text="Alive" />
+
+        <TextView
+            android:id="@+id/textCharacterName"
+            style="@style/textCharacterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_horizontal_name_character"
+            android:layout_marginBottom="@dimen/margin_bottom_name_character"
+            android:lineSpacingExtra="@dimen/lene_spacing_extra_name_character"
+            tools:text="TextView" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

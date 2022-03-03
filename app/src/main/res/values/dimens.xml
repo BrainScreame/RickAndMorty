@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--item character-->
+    <dimen name="corner_radius_character_item">8dp</dimen>
+    <dimen name="image_height">140dp</dimen>
+    <dimen name="margin_horizontal_status_character">12dp</dimen>
+    <dimen name="margin_top_status_character">12dp</dimen>
+    <dimen name="margin_horizontal_name_character">12dp</dimen>
+    <dimen name="margin_bottom_name_character">12dp</dimen>
+    <dimen name="lene_spacing_extra_name_character">5sp</dimen>
+
+    <!--placeholder character-->
+    <dimen name="placeholder_name_height">25dp</dimen>
+    <dimen name="placeholder_status_height">25dp</dimen>
+    <dimen name="margin_top_placeholder_name">8dp</dimen>
+
+    <!--error layout-->
+    <dimen name="margin_horizontal_text_error">16dp</dimen>
+    <dimen name="margin_top_button_error_retry">16dp</dimen>
+
+    <!--item load state-->
+    <dimen name="character_recycler_offset">12dp</dimen>
+    <dimen name="load_state_error_message_margin_end">16dp</dimen>
+    <dimen name="load_state_error_message_text_size">16sp</dimen>
+    <dimen name="load_state_progress_size">60dp</dimen>
+
+    <!--characters list-->
+    <dimen name="toolbar_elevation">2dp</dimen>
+    <dimen name="margins_placeholder_character">6dp</dimen>
+    <dimen name="layout_placeholder_margin_horizontal_items">12dp</dimen>
+    <dimen name="layout_placeholder_margin_top_items">12dp</dimen>
+    <dimen name="error_massage_text_size">16sp</dimen>
+
+</resources>

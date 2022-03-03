@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.RickAndMorty" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.RickAndMorty" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">#99000000</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,43 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:textColorPrimary">@color/charactersListToolbarTitleColor</item>
+    </style>
+
+    <style name="textCharacterStatus">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">@color/characterStatusTextColor</item>
+    </style>
+
+    <style name="textCharacterName">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/characterNameTextColor</item>
+    </style>
+
+    <style name="linearLayoutRowCharacterPlaceholder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">
+            @dimen/layout_placeholder_margin_horizontal_items
+        </item>
+        <item name="android:layout_marginTop">@dimen/layout_placeholder_margin_top_items</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="layoutPlaceholder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="layoutLeftPlaceholder" parent="layoutPlaceholder">
+        <item name="android:layout_marginEnd">@dimen/margins_placeholder_character</item>
+    </style>
+
+    <style name="layoutRightPlaceholder" parent="layoutPlaceholder">
+        <item name="android:layout_marginEnd">@dimen/margins_placeholder_character</item>
     </style>
 </resources>

@@ -11,6 +11,8 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
 
+    fun injectTo(application: RickAndMortyApplication)
+
     fun viewModelsFactory(): ViewModelFactory
 
     @Component.Builder

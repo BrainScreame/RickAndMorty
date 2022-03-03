@@ -2,6 +2,6 @@ package com.osenov.rickandmorty.di.module
 
 import dagger.Module
 
-@Module(includes = [ViewModelModule::class])
+@Module(includes = [ViewModelModule::class, NetworkModule::class])
 class AppModule {
 }

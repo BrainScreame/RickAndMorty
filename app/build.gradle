@@ -77,6 +77,10 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
     //Pagination
     def paging_version = "3.1.0"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
@@ -88,4 +92,7 @@ dependencies {
     //Swipe Refresh Layout
     def swipeRefreshLayout_version = "1.1.0"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayout_version"
+
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 }
