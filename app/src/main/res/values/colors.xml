@@ -10,9 +10,11 @@
     <color name="gray">#919191</color>
 
     <color name="background">#dddddd</color>
-
     <color name="characterStatusTextColor">#6E798C</color>
     <color name="characterNameTextColor">#081F32</color>
     <color name="characterStrokeColor">#C6C6D5</color>
     <color name="charactersListToolbarTitleColor">#081F32</color>
+    <color name="character_info_text_subtitle_color">#6E798C</color>
+    <color name="gray_200">#F2F2F7</color>
+    <color name="gray_400">#8E8E93</color>
 </resources>

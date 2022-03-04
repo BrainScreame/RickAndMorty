@@ -1,9 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.character_information.CharacterDetailInformationFragment">
 
 
-</FrameLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutCharacterInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarCharacterInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/toolbar_elevation"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            tools:title="@string/characters_list_toolbar_title" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefreshCharacterItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/characterItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/headerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/character_info_header_image_height"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/header_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_under_header_image_height"
+                    android:layout_marginBottom="-20dp"
+                    android:background="@color/gray_200"
+                    app:layout_constraintBottom_toBottomOf="@+id/textSpecies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/headerImage" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewImageCircleBorder"
+                    android:layout_width="@dimen/card_image_circle_border_size"
+                    android:layout_height="@dimen/card_image_circle_border_size"
+                    android:layout_marginTop="@dimen/card_image_circle_border_margin_top"
+                    app:cardBackgroundColor="@color/gray_200"
+                    app:cardCornerRadius="@dimen/card_image_circle_border_radius"
+                    app:cardElevation="@dimen/card_image_circle_border_elevation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/headerImage"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewImageCircle"
+                        android:layout_width="@dimen/card_image_circle_size"
+                        android:layout_height="@dimen/card_image_circle_size"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="@dimen/card_image_circle_radius">
+
+                        <ImageView
+                            android:id="@+id/imageCharacter"
+                            android:layout_width="@dimen/image_circle_character"
+                            android:layout_height="@dimen/image_circle_character"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/load" />
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textCharacterStatus"
+                    style="@style/textCharacterStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal_status_character"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewImageCircleBorder"
+                    tools:text="Alive" />
+
+                <TextView
+                    android:id="@+id/textCharacterName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/text_character_info_name_margin_horizontal"
+                    android:layout_marginTop="@dimen/text_character_info_name_margin_top"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_character_info_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textCharacterStatus"
+                    tools:text="Rick Sanchez" />
+
+                <TextView
+                    android:id="@+id/textSpecies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_species_margin_top"
+                    android:layout_marginBottom="@dimen/text_species_margin_bottom"
+                    android:textColor="@color/gray_400"
+                    android:textSize="@dimen/text_species_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textCharacterName"
+                    tools:text="HUMAN" />
+
+                <TextView
+                    android:id="@+id/informationCharacter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/information_character_margin_start"
+                    android:layout_marginTop="@dimen/information_character_margin_top"
+                    android:text="@string/information_character"
+                    android:textColor="@color/gray_400"
+                    android:textSize="@dimen/information_character_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <LinearLayout
+                    android:id="@+id/layoutInformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_information_margin_top"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/informationCharacter">
+
+                    <include
+                        android:id="@+id/genderInfo"
+                        layout="@layout/item_character_information" />
+
+                    <include
+                        android:id="@+id/originInfo"
+                        layout="@layout/item_character_information" />
+
+                    <include
+                        android:id="@+id/typeInfo"
+                        layout="@layout/item_character_information" />
+
+                    <include
+                        android:id="@+id/locationInfo"
+                        layout="@layout/item_character_information" />
+
+                    <RelativeLayout
+                        android:id="@+id/layoutEpisodes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/layout_episodes_margin_bottom"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/textEpisodes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/imageShowEpisodes"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginVertical="@dimen/text_episodes_margin_vertical"
+                            android:layout_marginStart="@dimen/text_episodes_margin_start"
+                            android:text="@string/text_episodes"
+                            android:textColor="@color/gray_400"
+                            android:textSize="@dimen/text_episodes_size" />
+
+                        <ImageView
+                            android:id="@+id/imageShowEpisodes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/image_show_episodes_margin_end"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

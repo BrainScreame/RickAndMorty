@@ -9,6 +9,10 @@ import com.osenov.rickandmorty.R
 
 class EpisodesListFragment : Fragment() {
 
+    companion object {
+        const val characterDetail = "CHARACTER_DETAIL"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

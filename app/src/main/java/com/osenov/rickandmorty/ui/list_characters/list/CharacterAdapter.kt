@@ -20,7 +20,7 @@ class CharacterAdapter(private val onItemClicked: (Character?) -> Unit) :
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         holder.bind(getItem(position))
-        holder.itemView.setOnClickListener{onItemClicked(getItem(position))}
+        holder.itemView.setOnClickListener { onItemClicked(getItem(position)) }
     }
 }
 

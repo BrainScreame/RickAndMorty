@@ -22,6 +22,7 @@ class RickAndMortyApplication : Application() {
 
         appComponent.injectTo(this)
 
+
         //setDefaultNightMode(MODE_NIGHT_YES)
     }
 }

@@ -6,4 +6,5 @@ class CharacterRemoteDataSource @Inject constructor(private val characterService
 
     suspend fun fetchCharacters(numberPage : Int) = characterService.getCharacters(numberPage)
 
+    suspend fun fetchSingleCharacter(characterId : Long) = characterService.getSingleCharacter(characterId)
 }

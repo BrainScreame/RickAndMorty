@@ -7,4 +7,15 @@
     <string name="button_retry">Retry</string>
     <string name="error_message">Error message</string>
     <string name="character_name">Rick and Morty</string>
+    <string name="information_character">Information</string>
+    <string name="text_episodes">Episodes</string>
+    
+    <string name="gender_text">Gender</string>
+    <string name="origin_text">Origin</string>
+    <string name="type_text">Type</string>
+    <string name="location_text">Location</string>
+    <string name="unknown_text">Unknown</string>
+
+    <string name="error_update_message">Failed to update data. Message: </string>
+    <string name="error_character_null">Object Character null</string>
 </resources>

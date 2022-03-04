@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/character_info_title_text_size"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="@dimen/character_info_text_title_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_title_margin_top"
+        tools:text="Gender"/>
+
+    <TextView
+        android:id="@+id/textSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/character_info_subtitle_text_size"
+        android:textColor="@color/character_info_text_subtitle_color"
+        android:layout_marginHorizontal="@dimen/character_info_text_subtitle_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_subtitle_margin_top"
+        tools:text="Gender"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/character_info_line_height"
+        android:background="@color/gray"
+        android:layout_marginHorizontal="@dimen/character_info_line_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_line_margin_top"/>
+
+</LinearLayout>
