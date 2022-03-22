@@ -21,6 +21,7 @@
     <string name="season">Season %1$d</string>
     <string name="filter">Filter</string>
     <string name="search">Search</string>
+    <string name="apply_button">Apply</string>
 
     <string-array name="status">
         <item>not select</item>

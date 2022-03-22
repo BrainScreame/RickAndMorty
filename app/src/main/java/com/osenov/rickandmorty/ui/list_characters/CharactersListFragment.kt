@@ -1,5 +1,7 @@
 package com.osenov.rickandmorty.ui.list_characters
 
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
@@ -24,7 +26,7 @@ import com.osenov.rickandmorty.ui.character_information.CharacterDetailInformati
 import androidx.lifecycle.flowWithLifecycle
 import com.osenov.rickandmorty.data.model.FilterCharacter
 import com.osenov.rickandmorty.util.safeNavigate
-import kotlinx.coroutines.Dispatchers
+import androidx.core.content.ContextCompat
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
@@ -128,6 +130,19 @@ class CharactersListFragment : Fragment() {
     }
 
     private fun updateSearchFilter(filter: FilterCharacter) {
+        if (filter.status.isNotEmpty() || filter.gender.isNotEmpty()) {
+            binding.characterToolbar.menu.findItem(R.id.action_filter).icon.colorFilter =
+                PorterDuffColorFilter(
+                    ContextCompat.getColor(requireContext(), R.color.teal_700),
+                    PorterDuff.Mode.SRC_IN
+                )
+        } else {
+            binding.characterToolbar.menu.findItem(R.id.action_filter).icon.colorFilter =
+                PorterDuffColorFilter(
+                    ContextCompat.getColor(requireContext(), R.color.gray_400),
+                    PorterDuff.Mode.SRC_IN
+                )
+        }
         searchView?.let {
             addOnQueryTextListenerOnSearchView()
             if ((it.query ?: "") != filter.query) {
