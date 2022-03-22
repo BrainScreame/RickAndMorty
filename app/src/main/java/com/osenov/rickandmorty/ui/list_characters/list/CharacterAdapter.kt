@@ -2,10 +2,12 @@ package com.osenov.rickandmorty.ui.list_characters.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.osenov.rickandmorty.data.model.Character
 import com.osenov.rickandmorty.databinding.ItemCharacterBinding
+import java.lang.IndexOutOfBoundsException
 
 class CharacterAdapter(private val onItemClicked: (Character?) -> Unit) :
     PagingDataAdapter<Character, CharacterViewHolder>(CharacterDiffItemCallback) {

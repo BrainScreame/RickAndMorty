@@ -1,5 +1,6 @@
 package com.osenov.rickandmorty.ui.character_information
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,23 +17,41 @@ import com.osenov.rickandmorty.data.model.Character
 import com.osenov.rickandmorty.databinding.FragmentCharacterDetailInformationBinding
 import com.osenov.rickandmorty.util.appComponent
 import com.osenov.rickandmorty.util.network.Result
-import androidx.core.view.isVisible
+import com.osenov.rickandmorty.ui.list_episodes.EpisodesListFragment
+import com.osenov.rickandmorty.ui.list_episodes.EpisodesListViewModel
+import com.osenov.rickandmorty.util.characterArgs
+import com.osenov.rickandmorty.util.listStringsArgs
+import javax.inject.Inject
 
 
 class CharacterDetailInformationFragment : Fragment() {
 
     companion object {
-        const val characterDetail = "CHARACTER_DETAIL"
+        const val CHARACTER = "CHARACTER"
+
+        fun makeArgs(character: Character): Bundle {
+            return Bundle(1).apply {
+                putParcelable(CHARACTER, character)
+            }
+        }
     }
 
-    private var character: Character? = null
-
-    private val viewModel: CharacterDetailInformationViewModel by viewModels {
-        requireContext().appComponent.viewModelsFactory()
-    }
+    private val character: Character by characterArgs(CHARACTER)
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         FragmentCharacterDetailInformationBinding.inflate(layoutInflater)
+    }
+
+    @Inject
+    lateinit var factory: CharacterDetailInformationViewModel.CharacterDetailInformationViewModelFactory.Factory
+
+    private val viewModel: CharacterDetailInformationViewModel by viewModels {
+        factory.create(character)
+    }
+
+    override fun onAttach(context: Context) {
+        context.appComponent.inject(this)
+        super.onAttach(context)
     }
 
     override fun onCreateView(
@@ -45,28 +64,21 @@ class CharacterDetailInformationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        character = arguments?.getParcelable(characterDetail)
-
-        character?.also {
-            showCharacterInfo(it)
-            binding.swipeToRefreshCharacterItem.setOnRefreshListener {
-                refreshCharacter(it)
-            }
+        refreshCharacter()
+        showCharacterInfo(character)
+        binding.swipeToRefreshCharacterItem.setOnRefreshListener {
+            refreshCharacter()
         }
 
-        if (character == null) {
-            showError(resources.getString(R.string.error_character_null))
-        }
     }
 
-    private fun refreshCharacter(character: Character) {
+    private fun refreshCharacter() {
         lifecycleScope.launchWhenStarted {
-            viewModel.updateCharacter(character.id).collect {
+            viewModel.updateCharacter().collect {
                 when (it.status) {
                     Result.Status.LOADING -> binding.swipeToRefreshCharacterItem.isRefreshing = true
                     Result.Status.SUCCESS -> {
                         if (it.data != null) {
-                            this@CharacterDetailInformationFragment.character = it.data
                             showCharacterInfo(it.data)
                         }
                     }
@@ -117,7 +129,7 @@ class CharacterDetailInformationFragment : Fragment() {
             layoutEpisodes.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_characterDetailInformationFragment_to_episodesListFragment,
-                    bundleOf(characterDetail to this@CharacterDetailInformationFragment.character)
+                    EpisodesListFragment.makeArgs(this@CharacterDetailInformationFragment.character.episodes)
                 )
             }
 

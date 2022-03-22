@@ -3,11 +3,16 @@ package com.osenov.rickandmorty.data.page_source
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.osenov.rickandmorty.data.model.Character
+import com.osenov.rickandmorty.data.model.FilterCharacter
 import com.osenov.rickandmorty.data.remote.CharacterRemoteDataSource
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import retrofit2.HttpException
 
-class CharacterPageSource(
-    private val characterRemoteDataSource: CharacterRemoteDataSource
+class CharacterPageSource @AssistedInject constructor(
+    private val characterRemoteDataSource: CharacterRemoteDataSource,
+    @Assisted("filter") private val filter: FilterCharacter
 ) : PagingSource<Int, Character>() {
 
     companion object {
@@ -23,7 +28,7 @@ class CharacterPageSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         try {
             val numberPage: Int = params.key ?: INITIAL_PAGE_NUMBER
-            val response = characterRemoteDataSource.fetchCharacters(numberPage)
+            val response = characterRemoteDataSource.fetchCharacters(numberPage, filter)
             return if (response.isSuccessful) {
                 val characterResponse = checkNotNull(response.body())
                 val nextKey =
@@ -38,6 +43,14 @@ class CharacterPageSource(
         } catch (e: Exception) {
             return LoadResult.Error(e)
         }
+    }
+
+    @AssistedFactory
+    interface Factory {
+
+        fun create(
+            @Assisted("filter") filter: FilterCharacter
+        ): CharacterPageSource
     }
 
 }

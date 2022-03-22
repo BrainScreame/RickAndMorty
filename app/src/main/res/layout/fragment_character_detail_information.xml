@@ -195,6 +195,8 @@
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="@dimen/image_show_episodes_margin_end"
                             android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:src="@drawable/ic_baseline_navigate_next_24" />
 
 

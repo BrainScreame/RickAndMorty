@@ -1,6 +1,7 @@
 package com.osenov.rickandmorty
 
 import android.app.Application
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate.*
 import com.osenov.rickandmorty.di.component.AppComponent
 import com.osenov.rickandmorty.di.component.DaggerAppComponent
@@ -25,4 +26,5 @@ class RickAndMortyApplication : Application() {
 
         //setDefaultNightMode(MODE_NIGHT_YES)
     }
+
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginHorizontal="@dimen/character_info_text_title_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_title_margin_top"
+        android:background="@color/background"/>
+
+    <View
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:background="@color/background"
+        android:layout_marginHorizontal="@dimen/character_info_text_subtitle_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_subtitle_margin_top" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:background="@color/background"
+        android:layout_marginHorizontal="@dimen/character_info_text_subtitle_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_subtitle_margin_top"
+        android:layout_marginBottom="@dimen/air_date_margin_bottom" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/character_info_line_height"
+        android:background="@color/gray"
+        android:layout_marginStart="@dimen/character_info_line_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_line_margin_top"/>
+
+</LinearLayout>

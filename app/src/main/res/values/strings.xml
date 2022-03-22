@@ -18,4 +18,23 @@
 
     <string name="error_update_message">Failed to update data. Message: </string>
     <string name="error_character_null">Object Character null</string>
+    <string name="season">Season %1$d</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+
+    <string-array name="status">
+        <item>not select</item>
+        <item>alive</item>
+        <item>dead</item>
+        <item>unknown</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>not select</item>
+        <item>female</item>
+        <item>male</item>
+        <item>genderless</item>
+        <item><item>unknown</item></item>
+    </string-array>
+
 </resources>

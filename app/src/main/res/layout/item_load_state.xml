@@ -22,8 +22,7 @@
         android:id="@+id/load_state_progress"
         android:layout_width="@dimen/load_state_progress_size"
         android:layout_height="@dimen/load_state_progress_size"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerInParent="true" />
 
     <Button
         android:id="@+id/load_state_retry"
@@ -31,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/purple_200"
-        android:text="@string/button_retry" />
+        android:backgroundTint="@color/blue_300"
+        android:text="@string/button_retry"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

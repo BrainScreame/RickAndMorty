@@ -12,7 +12,14 @@
         tools:layout="@layout/fragment_characters_list" >
         <action
             android:id="@+id/action_charactersListFragment_to_characterDetailInformationFragment"
-            app:destination="@id/characterDetailInformationFragment" />
+            app:destination="@id/characterDetailInformationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_charactersListFragment_to_bottomFilterFragment2"
+            app:destination="@id/bottomFilterFragment2" />
     </fragment>
     <fragment
         android:id="@+id/characterDetailInformationFragment"
@@ -21,11 +28,24 @@
         tools:layout="@layout/fragment_character_detail_information" >
         <action
             android:id="@+id/action_characterDetailInformationFragment_to_episodesListFragment"
-            app:destination="@id/episodesListFragment" />
+            app:destination="@id/episodesListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/episodesListFragment"
         android:name="com.osenov.rickandmorty.ui.list_episodes.EpisodesListFragment"
         android:label="fragment_episodes_list"
         tools:layout="@layout/fragment_episodes_list" />
+    <dialog
+        android:id="@+id/bottomFilterFragment2"
+        android:name="com.osenov.rickandmorty.ui.list_characters.BottomFilterFragment"
+        android:label="bottom_sheet_filter_fragment"
+        tools:layout="@layout/bottom_sheet_filter_fragment" >
+        <action
+            android:id="@+id/action_bottomFilterFragment2_to_charactersListFragment"
+            app:destination="@id/charactersListFragment" />
+    </dialog>
 </navigation>

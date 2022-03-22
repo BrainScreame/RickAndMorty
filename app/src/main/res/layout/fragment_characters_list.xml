@@ -12,10 +12,12 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/characterToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:elevation="@dimen/toolbar_elevation"
-            app:title="@string/characters_list_toolbar_title" />
+            app:title="@string/characters_list_toolbar_title"
+            app:menu="@menu/filter_menu" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -87,10 +89,10 @@
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
-
         <include
             android:id="@+id/errorLayout"
             layout="@layout/error_layout"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

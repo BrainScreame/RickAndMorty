@@ -30,12 +30,12 @@
     <dimen name="margins_placeholder_character">6dp</dimen>
     <dimen name="layout_placeholder_margin_horizontal_items">12dp</dimen>
     <dimen name="layout_placeholder_margin_top_items">12dp</dimen>
-    <dimen name="error_massage_text_size">16sp</dimen>
+    <dimen name="error_message_text_size">16sp</dimen>
     <dimen name="character_info_title_text_size">16sp</dimen>
     <dimen name="character_info_subtitle_text_size">14sp</dimen>
     <dimen name="character_info_text_title_margin_horizontal">16sp</dimen>
     <dimen name="character_info_text_title_margin_top">12dp</dimen>
-    <dimen name="character_info_text_subtitle_margin_horizontal">16sp</dimen>
+    <dimen name="character_info_text_subtitle_margin_horizontal">16dp</dimen>
     <dimen name="character_info_text_subtitle_margin_top">8dp</dimen>
     <dimen name="character_info_line_height">1dp</dimen>
     <dimen name="character_info_line_margin_horizontal">16dp</dimen>
@@ -64,5 +64,8 @@
     <dimen name="text_species_size">14sp</dimen>
     <dimen name="text_species_margin_bottom">16dp</dimen>
     <dimen name="text_species_margin_top">8dp</dimen>
+    <dimen name="air_date_text_sIze">12sp</dimen>
+    <dimen name="air_date_margin_bottom">16dp</dimen>
+    <dimen name="season_text_margin_verical">16dp</dimen>
 
 </resources>

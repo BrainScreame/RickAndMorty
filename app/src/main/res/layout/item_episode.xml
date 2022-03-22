@@ -9,7 +9,7 @@
     android:background="?attr/selectableItemBackground">
 
     <TextView
-        android:id="@+id/textTitle"
+        android:id="@+id/textEpisode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/character_info_title_text_size"
@@ -17,23 +17,27 @@
         android:textStyle="bold"
         android:layout_marginHorizontal="@dimen/character_info_text_title_margin_horizontal"
         android:layout_marginTop="@dimen/character_info_text_title_margin_top"
-        tools:text="Gender"/>
+        tools:text="S01E01"/>
 
     <TextView
-        android:id="@+id/textSubTitle"
+        android:id="@+id/textEpisodeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/character_info_subtitle_text_size"
         android:textColor="@color/gray_600"
         android:layout_marginHorizontal="@dimen/character_info_text_subtitle_margin_horizontal"
         android:layout_marginTop="@dimen/character_info_text_subtitle_margin_top"
-        tools:text="Gender"/>
+        tools:text="Pilot"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/character_info_line_height"
-        android:background="@color/gray"
-        android:layout_marginHorizontal="@dimen/character_info_line_margin_horizontal"
-        android:layout_marginTop="@dimen/character_info_line_margin_top"/>
+    <TextView
+        android:id="@+id/textAirDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/air_date_text_sIze"
+        android:textColor="@color/gray_400"
+        android:layout_marginHorizontal="@dimen/character_info_text_subtitle_margin_horizontal"
+        android:layout_marginTop="@dimen/character_info_text_subtitle_margin_top"
+        android:layout_marginBottom="@dimen/air_date_margin_bottom"
+        tools:text="DECEMBER 2, 2013"/>
 
 </LinearLayout>
