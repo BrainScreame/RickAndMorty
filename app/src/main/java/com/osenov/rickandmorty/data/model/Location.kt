@@ -1,10 +1,11 @@
 package com.osenov.rickandmorty.data.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Location(
-    val name: String,
-    val url: String
+    @ColumnInfo(name = "location_name") val name: String,
+    @ColumnInfo(name = "location_url")val url: String
 ) : Parcelable

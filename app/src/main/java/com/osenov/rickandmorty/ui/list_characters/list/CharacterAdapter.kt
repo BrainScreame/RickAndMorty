@@ -33,6 +33,6 @@ private object CharacterDiffItemCallback : DiffUtil.ItemCallback<Character>() {
     }
 
     override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.id == newItem.id && oldItem.name == newItem.name && oldItem.created == newItem.created
     }
 }

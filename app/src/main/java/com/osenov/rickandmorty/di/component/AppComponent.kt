@@ -1,5 +1,6 @@
 package com.osenov.rickandmorty.di.component
 
+import android.content.Context
 import com.osenov.rickandmorty.RickAndMortyApplication
 import com.osenov.rickandmorty.di.module.AppModule
 import com.osenov.rickandmorty.ui.character_information.CharacterDetailInformationFragment
@@ -24,8 +25,9 @@ interface AppComponent {
     interface Builder {
 
         @BindsInstance
-        fun application(application: RickAndMortyApplication) : Builder
-
-        fun build() : AppComponent
+        fun application(application: RickAndMortyApplication): Builder
+        @BindsInstance
+        fun context(context: Context): Builder
+        fun build(): AppComponent
     }
 }

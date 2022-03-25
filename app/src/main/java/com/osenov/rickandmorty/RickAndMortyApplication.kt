@@ -19,6 +19,7 @@ class RickAndMortyApplication : Application() {
         super.onCreate()
         _appComponent = DaggerAppComponent.builder()
             .application(application = this)
+            .context(this)
             .build()
 
         appComponent.injectTo(this)
