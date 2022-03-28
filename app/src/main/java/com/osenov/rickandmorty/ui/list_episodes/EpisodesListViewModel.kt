@@ -22,7 +22,7 @@ class EpisodesListViewModel(
 //    val episodes: Flow<Result<ArrayList<EpisodeUI>>> =
 //        getCharacterEpisodesUseCase.execute(stringsEpisodesUrl)
 
-    suspend fun getCharacterEpisodes(): Flow<Result<ArrayList<EpisodeUI>>> {
+    suspend fun getCharacterEpisodes(): Flow<Result<List<EpisodeUI>>> {
         return getCharacterEpisodesUseCase.execute(stringsEpisodesUrl)
     }
 

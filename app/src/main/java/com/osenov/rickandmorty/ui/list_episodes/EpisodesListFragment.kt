@@ -134,7 +134,7 @@ class EpisodesListFragment : Fragment() {
         }
     }
 
-    private fun showEpisodes(episodes: ArrayList<EpisodeUI>?) {
+    private fun showEpisodes(episodes: List<EpisodeUI>?) {
         with(binding) {
             recyclerEpisodes.isVisible = true
             shimmerViewEpisodes.isVisible = false

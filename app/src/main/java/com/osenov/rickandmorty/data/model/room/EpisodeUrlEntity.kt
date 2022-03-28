@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "character_episodes_url")
 data class EpisodeUrlEntity(
-    @PrimaryKey(autoGenerate = true) val id : Long,
+    @PrimaryKey(autoGenerate = true) val id : Long? = null,
     val characterId : Long,
     val episodeUrl: String
 )

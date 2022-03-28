@@ -27,11 +27,13 @@ import androidx.lifecycle.flowWithLifecycle
 import com.osenov.rickandmorty.data.model.FilterCharacter
 import com.osenov.rickandmorty.util.safeNavigate
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
+@ExperimentalCoroutinesApi
 class CharactersListFragment : Fragment() {
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {

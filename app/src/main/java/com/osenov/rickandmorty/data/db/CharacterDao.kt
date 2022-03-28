@@ -17,12 +17,6 @@ interface CharacterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacterEpisodes(episodes: List<EpisodeUrlEntity>)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEpisodes(episodes: List<EpisodeEntity>)
-
-    @Query("SELECT * FROM episodes WHERE id IN (:episode_ids)")
-    suspend fun getCharacterEpisodes(episode_ids: List<Int>) : List<EpisodeEntity>
-
     @Transaction
     @Query("SELECT * FROM characters WHERE name LIKE :query AND status LIKE :status AND gender LIKE :gender LIMIT 20 OFFSET (:numberPage - 1) * 20")
     suspend fun getCharacters(
@@ -31,5 +25,11 @@ interface CharacterDao {
         status: String,
         gender: String
     ): List<CharacterWithEpisodesUrl>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertEpisodes(episodes: List<EpisodeEntity>)
+
+    @Query("SELECT * FROM episodes WHERE id IN (:episode_ids)")
+    suspend fun getCharacterEpisodes(episode_ids: List<Int>) : List<EpisodeEntity>
 
 }

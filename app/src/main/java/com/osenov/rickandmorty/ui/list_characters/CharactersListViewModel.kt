@@ -7,6 +7,7 @@ import androidx.paging.*
 import com.osenov.rickandmorty.data.model.Character
 import com.osenov.rickandmorty.data.model.FilterCharacter
 import com.osenov.rickandmorty.domain.GetQueryCharactersUseCase
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
@@ -27,6 +28,7 @@ class CharactersListViewModel @Inject constructor(
 
     private var newPagingSource: PagingSource<*, *>? = null
 
+    @ExperimentalCoroutinesApi
     val characters: StateFlow<PagingData<Character>> = filter
         .map(::newPager)
         .flatMapLatest { pager -> pager.flow }

@@ -19,7 +19,7 @@ class EpisodesAdapter(private val onItemClicked: (EpisodeUI?) -> Unit) :
 
     private var episodes = ArrayList<EpisodeUI>()
 
-    fun setData(data: ArrayList<EpisodeUI>) {
+    fun setData(data: List<EpisodeUI>) {
         episodes.clear()
         this.episodes.addAll(data)
         notifyDataSetChanged()
